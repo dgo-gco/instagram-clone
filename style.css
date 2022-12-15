@@ -11,15 +11,15 @@ img {
 
 body {
     background-color: #E5E5E5;
-    width: min(1196px, 100%);
-    margin: auto;
     font-family: 'Roboto', sans-serif;
+
 }
 
 .principal-bar {
     display: flex;
     justify-content: space-between;
     margin: 34px;
+    width: 100vw;
 }
 
 .input-et-btn {
@@ -28,7 +28,6 @@ body {
 }
 
 .input {
-
     position: relative;
 }
 
@@ -39,6 +38,10 @@ input {
     height: 61px;
     font-size: 20px;
     padding: 5px;
+}
+
+input:focus {
+    width: 85px;
 }
 
 .recherche {
@@ -59,9 +62,24 @@ input {
     color: white;
     font-size: bold;
     font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.add-icon {
+    min-width: 18px;
+    height: 18px;
+}
+
+.burger, .menu {
+    display: none;
 }
 
 #grid-principal-sec {
+    width: min(1196px, 90%);
+    margin: auto;
+
     display: grid;
     grid-gap: 26px;
     grid-template-columns: repeat(4, .5fr);
@@ -79,8 +97,7 @@ input {
 }
 
 #my-profile,
-#bienvenue,
-#stories, #profile-one,
+#bienvenue, #profile-one,
 #profile-two, #profile-three,
 #profile-four {
     border-radius: 20px;
@@ -97,6 +114,7 @@ input {
 #my-profile > img {
     width: min(320px, 100%);
     border-radius: 20px 20px 0 0;
+    object-fit: cover;
 }
 
 .user-txt {
@@ -123,16 +141,17 @@ input {
     justify-content: center;
     align-items: center;
     color: white;
+    min-height: 300px;
 }
 
 #bienvenue > h1 {
-    font-size: 90px;
+    font-size: clamp(40px, 5vw, 90px);
     font-weight: 700;
     text-shadow: 1px 1px 8px black;
 }
 
 #bienvenue > p {
-    font-size: 60px;
+    font-size: clamp(30px, 5vw, 60px);
     font-weight: 300;
 }
 
@@ -150,12 +169,9 @@ input {
     height: 85px;
     border: 5px solid pink;
 
-    /* border-image: linear-gradient(220.96deg, #8C3AAA 9.21%, #DB3B75 49.47%, #F28F3D 91.44%);
-    border-image-slice: 1; */
-
     border-radius: 50%;
     border: double 5px transparent;
-    background-image: linear-gradient(white, white),
+    background-image: linear-gradient(#E5E5E5, #E5E5E5),
     linear-gradient(220.96deg, #8C3AAA 9.21%, #DB3B75 49.47%, #F28F3D 91.44%);;
     background-origin: border-box;
     background-clip: content-box, border-box;
@@ -218,3 +234,144 @@ input {
     padding: 3px;
 }
 
+@media screen and (max-width: 821px) {
+
+    .burger {
+        display: block;
+        cursor: pointer;
+        z-index: 2;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+
+    .close-menu {
+        display: none;
+    }
+
+    .active > .burger-menu {
+        display: none;
+    }
+
+    .active > .close-menu {
+        display: block;
+    }
+
+    .menu {
+        color: white;
+        background-color: #1E2A37;
+        position: fixed;
+        left: 0%;
+        top: -100%;
+        gap: 0;
+        display: flex;
+        list-style-type: none;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        justify-content: space-around;
+        transition: all 0.7s;
+    }
+    
+    .menu > ul {
+        list-style: none;
+    }
+
+    .menu > ul {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .menu.active {
+        top: 0;
+    }
+
+    .principal-bar {
+        align-items: center;
+        background-color: #1E2A37;
+        min-height: 91px;
+        padding: 30px;
+        margin: 0px;
+        margin-bottom: 50px;
+    }
+
+    .input-et-btn {
+        display: none;
+    }
+
+    .logo {
+        filter: invert(100%) sepia(2%) saturate(14%) hue-rotate(129deg) brightness(106%) contrast(100%);;
+    }
+
+    #grid-principal-sec {
+        grid-template-columns: repeat(6, .5fr);
+        grid-template-areas: 
+        "bienvenue bienvenue bienvenue bienvenue bienvenue bienvenue"
+        "stories stories stories stories stories ."
+        "actu actu actu actu actu actu"
+        "firstuser firstuser seconduser seconduser thirduser thirduser"
+        "fourthuser fourthuser fourthuser fourthuser thirduser thirduser";
+    }
+
+    #my-profile {
+        display: none;
+    }
+
+    .active-stories {
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+        justify-content: start;
+        gap: 15px;
+    }
+
+    .active-stories::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 501px) {
+
+    
+    #grid-principal-sec {
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+        grid-template-rows: repeat(auto-fit, minmax(470px, 1fr));
+        grid-template-areas: 
+        "user"
+        "bienvenue"
+        "stories"
+        "actu"
+        "firstuser"
+        "seconduser"
+        "thirduser"
+        "fourthuser";
+    }
+
+    #my-profile {
+        display: block;
+        grid-area: user;
+        grid-template-rows: 50% 50%;
+    } 
+
+    #profile-one,
+    #profile-two, #profile-three,
+    #profile-four {
+        min-height: 430px;
+    }
+
+    .active-stories {
+        justify-content: start;
+        gap: 11px;
+    }
+
+    .insta-card > img {
+        height: 430px;
+    }
+
+    .insta-card.three > img {
+        object-position: bottom;
+    }
+}

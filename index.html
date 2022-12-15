@@ -16,7 +16,7 @@
     <header>
         <div class="principal-bar">
             <div class="logotipo">
-                <img src="images/Instagram-logo.png" alt="Instagram logo">
+                <img src="images/Instagram-logo.png" alt="Instagram logo" class="logo">
             </div>
             <nav>
 
@@ -28,14 +28,28 @@
                         <button class="recherche"><img src="/images/header-icone-recherche.png" alt=""></button>
                     </label>
                 </div>
-                <button class="add-photo-btn"> Ajouter photo</button>
+                <button class="add-photo-btn"><img src="images/header-icone-ajout.png" alt="" class="add-icon"> Ajouter photo</button>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li>Actualités</li>
+                    <li>Stories</li>
+                    <li>Reels</li>
+                    <li>Directs</li>
+                    <li>Paramètres</li>
+                    <li>Deconnéxion</li>
+                </ul>
+            </div>
+            <div class="burger">
+                <img src="images/header-icone-burger.png" alt="" class="burger-menu">
+                <img src="images/header-icone-burger-croix.png" alt="" class="close-menu">
             </div>
         </div>
     </header>
 
     <section id="grid-principal-sec">
         <section id="my-profile">
-            <img src="images/pexels-kaique-rocha-108148.jpeg" alt="">
+            <img src="images/pexels-kaique-rocha-108148.jpeg" alt="" class="user-pp">
             <div class="user-txt">
                 <div class="profile title">
                     <h3>Jean Robinet</h1>
@@ -106,7 +120,7 @@
 
         <section id="profile-two" class="insta-feed">
             <div class="insta-card two">
-                <img src="/images/user-two.jpeg" alt="">
+                <img src="/images/user-two.jpg" alt="">
                 <div class="username">
                     <div class="storie-border feed">
                         <img src="images/profile-two.png" alt="">
@@ -141,5 +155,6 @@
         </section>
     </section>
     
+    <script src="script.js"></script>
 </body>
 </html>
