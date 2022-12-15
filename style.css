@@ -16,7 +16,7 @@ body {
 }
 
 header {
-    width: min(1196px, 90%);
+    width: min(1196px, 100%);
     margin: auto;
 }
 
