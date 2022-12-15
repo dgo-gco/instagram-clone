@@ -15,11 +15,15 @@ body {
 
 }
 
+header {
+    width: min(1196px, 90%);
+    margin: auto;
+}
+
 .principal-bar {
     display: flex;
     justify-content: space-between;
     margin: 34px;
-    width: 100vw;
 }
 
 .input-et-btn {
