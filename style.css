@@ -38,10 +38,11 @@ input {
     height: 61px;
     font-size: 20px;
     padding: 5px;
+    width: 110px;
 }
 
 input:focus {
-    width: 85px;
+    width: 190px;
 }
 
 .recherche {
