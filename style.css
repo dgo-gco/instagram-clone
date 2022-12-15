@@ -134,7 +134,7 @@ input:focus {
 
 #bienvenue {
     grid-area: bienvenue;
-    background-image: url(/images/DSC_0464hdr1.jpg);
+    background-image: url(images/DSC_0464hdr1.jpg);
     background-position: center;
     background-size: cover;
     display: flex;
@@ -264,7 +264,7 @@ input:focus {
         background-color: #1E2A37;
         position: fixed;
         left: 0%;
-        top: -100%;
+        top: -120%;
         gap: 0;
         display: flex;
         list-style-type: none;
